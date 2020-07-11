@@ -1,0 +1,101 @@
+Things to automate:
+
+1. create a python script that accepts a string input (encoded message)
+and then decodes it into different cipher ex. ROT13
+
+2. create a python script that accepts a string input (encoded message)
+and then decodes it into decimal, octal, hex, binary, ascii
+    - binary (01001) to ascii (ABC)
+    - use ord to convert ascii to number
+
+3. create a shell script connecting to ssh. use the command below
+    #!/bin/bash
+    ssh -i <ssh location> <user@>hostname "$1"
+   
+   the $1 means you can pass an argument to the script
+
+4. create a python script that decode aes and other cypto decrypt
+
+5. url encoding and decoding script
+
+
+Linux commands:
+1. find - linux command for searching file
+2. nc - connect to ip:port shell
+3. which - find the location of a command
+4. chmod - convert o executable by adding chmod +x
+5. grep - print lines matching pattern, can be pip |
+
+6. cut -d ":" -f1
+    - cut line or string by delimeter and select the field using f1, f2
+
+7. xxd - convert hex to raw bytes format and vice versa (ex. 0x41 -> A)
+
+8. ls -l
+    view permissions like -rwxr-x-r--
+    rwx(read, write, executable)
+    (owner) - (group) - (other)
+
+9.  FOR loop in bash
+    for i in {start..end}
+    do
+        echo $i
+    done
+
+10. ln -s
+        create a symbolink link / shortcut
+
+
+11. strings
+    get strings from any file
+    n - flag to control length of characters
+
+
+
+12, curl
+    can perform get and post request and edit user agents
+
+13. file
+    file command determines if it's an executable or not
+
+14. hexedit
+    view binary files in binary and hex
+
+
+15. eog
+    view image via command line
+
+
+16. exiftool
+    view meta data of an image
+
+17. zsteg
+    detect hidden data
+
+18. evince
+    document viewer for linux
+
+19. printf
+    get multiple inputs into one line input for other commands
+    ex. printf "robert\nch4sm\ny" | nc shell2017.picoctf.com 46881 | grep -i "flag" | rev | cut -d " " -f1 | rev
+
+
+
+WEBSITES TO USE:
+1. quiquip.com
+2. hashkiller.io
+
+Doucmenting results:
+1. create a folder in this format <challenge_name>)_COMPLETE
+2. create a solutions.txt and explain how you solve the challenge
+
+ENCODINGS:
+1. hex - 0-9, a-f ex. 0af53
+2. base64 - A-Z, a-z, 0-9, +, /, = padding
+3. base64 urlsafe - A-Z, a-z, 0-9, -, _, = padding
+4. base32 - A-Z, 2-7, = padding
+5. base32 extended hex - 0-9, A-V, = padding
+6. base16 (hex) - 0-9, A-F
+
+LSB
+1. search for least significant bit
