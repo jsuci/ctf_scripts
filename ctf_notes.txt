@@ -1,4 +1,22 @@
-Things to automate:
+CTF QUESTION TYPES:
+1. Binary Exploitation
+    - making an application act differently
+    - memory corruption
+    - hijacking the control flow
+
+2. Reverse Engineering
+    - string hidden inside the application code
+    - knowledge debugger and disassembler
+    - uses control flow, loops, and conditionals
+
+3. Web Exploitation
+    - Nmap, Wireshark, and Metasploit.
+    - View Page Source
+
+4. Cryptography
+    - based on string conversions from one format to another.
+
+TO AUTOMATE:
 
 1. create a python script that accepts a string input (encoded message)
 and then decodes it into different cipher ex. ROT13
@@ -129,3 +147,4 @@ Turn 5 to -5 using 2's COMPLIMENT
 step 1: find the bits of the positive value ex. 5 is 0101
 step 2: inverse 0101 bits ex. 0101 -> 1010
 step 3: add 0001 to the inverse ex. 1010 + 0001 -> 1011
+
