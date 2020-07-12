@@ -18,6 +18,10 @@ and then decodes it into decimal, octal, hex, binary, ascii
 
 5. url encoding and decoding script
 
+6. pip install pwntools
+
+7. https://github.com/longld/peda
+
 
 Linux commands:
 1. find - linux command for searching file
@@ -79,11 +83,17 @@ Linux commands:
     get multiple inputs into one line input for other commands
     ex. printf "robert\nch4sm\ny" | nc shell2017.picoctf.com 46881 | grep -i "flag" | rev | cut -d " " -f1 | rev
 
+20. readelf - displays information about ELF files.
+
+21. binwalk - extraction tool
+
+22. foremost - forensic data recovery program for Linux used to recover files
 
 
 WEBSITES TO USE:
 1. quiquip.com
 2. hashkiller.io
+3. shellstorm
 
 Doucmenting results:
 1. create a folder in this format <challenge_name>)_COMPLETE
@@ -99,3 +109,23 @@ ENCODINGS:
 
 LSB
 1. search for least significant bit
+
+
+ASSEMBLY CODE
+1. esb - base pointer; fix point at the register
+2. esp - one that moves in the stack, goes up and down
+3. esi - gets value and pass them around
+4. add - perform addition
+5. sub - perform subtraction
+6. mov - setting value to something
+7. pushl - push 4 bytes into the stack
+8. test %eax, %eax - test if %eax == 0
+9. jz fin - if %eax == 0 jump to finish
+10. dec %eax - decrement %eax by 1 ( eax -= 1)
+
+TWOS COMPLIMENT:
+Turn 5 to -5 using 2's COMPLIMENT
+
+step 1: find the bits of the positive value ex. 5 is 0101
+step 2: inverse 0101 bits ex. 0101 -> 1010
+step 3: add 0001 to the inverse ex. 1010 + 0001 -> 1011
