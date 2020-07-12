@@ -1,3 +1,8 @@
+https://2019game.picoctf.com/
+jbmjbm
+picoctf-qwerty1234
+jsuci.jsuci@gmail.com
+
 CTF QUESTION TYPES:
 1. Binary Exploitation
     - making an application act differently
