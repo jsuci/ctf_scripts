@@ -3,6 +3,40 @@ jbmjbm
 picoctf-qwerty1234
 jsuci.jsuci@gmail.com
 
+ https://hackm3.online/login
+Username: jsuci.jsuci@gmail.com
+Password: hackm3ph-Jsuci
+
+
+CONNECT TO REMOTE SHELL VIA SSH
+
+ON LOCAL MACHINE
+1.  cd ~
+    mkdir .ssh
+        -go to home directory and create a .ssh folder
+
+2. ssh-keygen -t rsa -C <email>
+    - create rsa keys
+
+3. cat .ssh/id_rsa.pub
+    - copy the key and upload it to your remote server
+    - file name must be ./ssh/authorize_keys
+
+ON THE SERVER
+1.  mkdir .ssh
+        - create a ssh directory
+
+2.  cd .ssh
+    vi authorize_keys
+        - create authorize_keys file
+
+
+ON LOCAL MACHINE
+1.  ssh -i ./ssh/id_rsa <username>@remote_address
+        - connect to remote server using rsa private keys 
+
+
+
 CTF QUESTION TYPES:
 1. Binary Exploitation
     - making an application act differently
@@ -112,6 +146,12 @@ Linux commands:
 
 22. foremost - forensic data recovery program for Linux used to recover files
 
+23. cp folder1/{file1, file2} folder2
+        - copy multiple files to other folder
+
+24 diff -y -W 70 --suppress-common-lines alpha1 alpha2
+        -compare differences of two files
+
 
 WEBSITES TO USE:
 1. quiquip.com
@@ -146,6 +186,10 @@ ASSEMBLY CODE
 9. jz fin - if %eax == 0 jump to finish
 10. dec %eax - decrement %eax by 1 ( eax -= 1)
 
+
+INTEL x86
+1. eip - a type of register; instruction pointer
+
 TWOS COMPLIMENT:
 Turn 5 to -5 using 2's COMPLIMENT
 
@@ -153,3 +197,125 @@ step 1: find the bits of the positive value ex. 5 is 0101
 step 2: inverse 0101 bits ex. 0101 -> 1010
 step 3: add 0001 to the inverse ex. 1010 + 0001 -> 1011
 
+
+
+RADARE2 COMMANDS
+1. r2 <binary>
+    start program
+
+2. V + enter
+    different view modes
+
+3. p
+    go to differernt views
+
+4. : + aaa + enter
+    analize binary
+
+5. : + afll
+    -analize function list in verbose
+
+6. : + s main + enter(2x)
+    seek main
+
+7. up / down + enter
+    jump to function call
+
+8. u
+    to go back after seeking
+
+
+9. : + axt
+    -function must be selected first
+    -show where this function is called
+    -analysis referrence to
+
+10. : + axf
+    -analysis referrence from
+
+
+11. : + ii
+    -show imported modules
+
+12. : + iE
+    -show exports
+
+13. : + iS
+    -show memory sections
+
+
+14. : + is
+    - show symbols
+
+15. : + iz(z)
+    - show strings found
+
+16. : + iI
+    - show binary info
+
+17. r2 -w <file>
+    : + aaa
+    shift A
+    
+    - patch binaries
+    - go to address you want to edit
+    - shift A to start editing
+
+18. : + VV
+    - switch to graph view
+    - [od] press od to go to function
+    - p press p x times to switch views
+
+20. : + <command> ~..
+    - limit screen results
+
+
+21. r2 -d <file>
+    - start file in debugger mode
+
+    aaa
+    - analyze the binary
+
+
+
+DATA ENCODINGS:
+1. binary to ascii
+2. int to ascii
+
+
+PIPED LINUX COMMANDS
+1.  find | grep -E "file[0-9]+" | xargs grep "pico"
+        - find all files and directories
+        - pipe all results to grep -E <regex>
+        - pipe xargs so that each result will be processed again
+
+
+MP3 / WAV STEGO
+Command Line Arguments:
+ -h, --hide               To hide data in a sound file
+ -r, --recover            To recover data from a sound file
+ -i, --input TEXT         Path to a .wav file
+ -s, --secret TEXT        Path to a file to hide in the sound file
+ -o, --output TEXT        Path to an output file
+ -n, --lsb-count INTEGER  How many LSBs to use  [default: 2]
+ -b, --bytes INTEGER      How many bytes to recover from the sound file
+ --help                   Show this message and exit.
+
+1. pip3 install stego-lsb
+    - to hide
+        $ stegolsb wavsteg -h -i sound.wav -s file.txt -o sound_steg.wav -n 1
+
+    - to recover
+        $ stegolsb wavsteg -r -i sound_steg.wav -o output.txt -n 1 -b 1000
+
+
+misc
+flag{like_us_on_facebook}
+flag{ben0xA05428967}
+
+reversing
+
+
+forensics
+flag{New York}
+flag{Beru}
